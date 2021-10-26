@@ -1,4 +1,4 @@
-package com.techvista.assignment.assignment;
+package com.techvista.assignment;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
