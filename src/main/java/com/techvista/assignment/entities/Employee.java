@@ -7,12 +7,13 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Date;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "employees")
+@Table(name = "employees", schema = "techvista")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,7 +39,7 @@ public class Employee {
     private Integer salary;
     @Basic
     @Column(name = "manager_id")
-    private String managerId;
+    private Integer managerId;
     @ManyToOne
     @JoinColumn(name = "department_id", referencedColumnName = "department_id", nullable = false)
     private Department department;
