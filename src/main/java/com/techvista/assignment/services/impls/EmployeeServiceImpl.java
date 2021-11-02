@@ -42,7 +42,7 @@ public class EmployeeServiceImpl implements IEmployee {
             employee.setDepartment(departmentRepository.findByDepartmentId(employeeDto.getDepartment().getDepartmentId()));
             employeeRepository.save(employee);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ResponseDto(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Error occured", e.getMessage()));
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ResponseDto(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Error occurred", e.getMessage()));
         }
         return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseDto(HttpStatus.CREATED.value(), "Employee added successfully", null));
     }
@@ -59,7 +59,7 @@ public class EmployeeServiceImpl implements IEmployee {
                 return ResponseEntity.status(HttpStatus.NO_CONTENT).body(new ResponseDto(HttpStatus.NO_CONTENT.value(), "Employee Not Exist", null));
             }
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ResponseDto(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Error occured", e.getMessage()));
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ResponseDto(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Error occurred", e.getMessage()));
         }
         return ResponseEntity.status(HttpStatus.OK).body(new ResponseDto(HttpStatus.OK.value(), "Employee updated successfully", null));
     }

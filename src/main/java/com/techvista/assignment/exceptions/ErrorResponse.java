@@ -8,7 +8,6 @@ import java.util.List;
 public class ErrorResponse {
 
     private List<ErrorDetails> errors;
-
     @Data
     public static class ErrorDetails {
         private String fieldName;
